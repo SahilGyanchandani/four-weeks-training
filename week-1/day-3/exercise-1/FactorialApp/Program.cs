@@ -18,7 +18,8 @@
         public static long CalculateFactorial(int number)
         {
             //throw new NotImplementedException();
-            int factorial = 1;
+            if (number < 0) throw new ArgumentException();
+            long factorial = 1;
             if (number == 0)
             {
                 Console.WriteLine("1");
