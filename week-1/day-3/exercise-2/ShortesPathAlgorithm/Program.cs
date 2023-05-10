@@ -28,6 +28,8 @@
             RunTestcase4();
             RunTestcase5();
 
+            Console.WriteLine("Press Any key to Return");
+            Console.ReadKey();
         }
 
         private static void RunTestcase1()
@@ -223,7 +225,7 @@
                 visited[i] = false;
             }
 
-            distances[source] = int.MinValue;
+            distances[source] = 0;
 
             for (int count = 0; count < vertices - 1; count++)
             {
