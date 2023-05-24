@@ -5,3 +5,4 @@ function greet(name: string): string {
 console.log(greet("Alice"));
 console.log(greet("Bob"));
 console.log(greet("Charlie"));
+console.log(greet("Charlie"));
