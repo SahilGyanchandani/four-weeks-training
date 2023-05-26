@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Array Operations</title>
+  <script src="script.js">
+    
+  </script>
+</head>
+<body>
+  <h1>Array Operations</h1>
+  <!-- Input fields for arrays -->
+  <label for="numbers">Enter an array of numbers:</label>
+  <input type="text" id="numbers" placeholder="e.g., 1, 2, 3, 4, 5, 3, 2, 1, 6"><br><br>
+
+  <label for="arr1">Enter array 1:</label>
+  <input type="text" id="arr1" placeholder="e.g., 1, 2, 3, 4, 5"><br><br>
+
+  <label for="arr2">Enter array 2:</label>
+  <input type="text" id="arr2" placeholder="e.g., 4, 5, 6, 7, 8"><br><br>
+
+  <!-- Button to trigger array operations -->
+  <button onclick="performOperations()">Perform Operations</button>
+
+  <!-- Result sections -->
+  <h2>Results:</h2>
+  <div>
+    <strong>Unique Numbers:</strong> <span id="uniqueResult"></span>
+  </div>
+  <div>
+    <strong>Common Numbers in the First Array:</strong> <span id="commonResult"></span>
+  </div>
+  <div>
+    <strong>Common Numbers in Arrays 1 and 2:</strong> <span id="commonNumbersResult"></span>
+  </div>
+</body>
+</html>
