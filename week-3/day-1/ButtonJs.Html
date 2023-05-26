@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+        function showAlert() {
+            alert("Button Clicked!");
+        }
+        function showAdd(){
+            let num1= document.getElementById("lblNo1").value;
+            let num2=document.getElementById("lblNo2").value;
+            var sum= parseFloat(num1)+parseFloat(num2);
+            // document.getElementById("lblResult").innerHTML=sum;
+            alert("Addition Of Both Numbers: "+sum);
+        }
+
+    </script>
+</head>
+<body>
+    <button id="btnClick" onclick="showAlert()">Click Me!</button>
+    
+    <form id="Form1">
+    <label for="lblNo1">Enter No1:</label>
+    <input type="number" id="lblNo1" required>
+    <label for="lblNo2">Enter No2:</label>
+    <input type="number" id="lblNo2" required>
+    <!-- <label id="lblResult">Answer is : </label> -->
+    <button type="submit" onclick="showAdd()">Submit</button>
+
+    </form>
+
+
+</body>
+</html>

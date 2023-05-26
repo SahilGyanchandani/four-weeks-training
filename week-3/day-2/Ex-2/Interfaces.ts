@@ -6,6 +6,7 @@ interface Person {
   
   function introduce(person: Person): void {
     console.log(`${person.firstName} ${person.lastName} is ${person.age} years old`);
+     
   }
   
   const person: Person = {
