@@ -1,0 +1,42 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="form-container">
+    <div class="form-row">
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" name="firstName" formControlName="firstName"  required [ngClass]="{'error-input':!form.controls['firstName'].valid && form.controls['firstName'].touched}">
+        <span class="text-danger" *ngIf="!form.controls['firstName'].valid && form.controls['firstName'].touched">FirstName is required</span><br>
+        <span class="text-danger" *ngIf="form.controls['firstName'].errors?.['pattern']">Please enter alphabets only.</span>
+    </div>
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input type="text" id="lastName" formControlName="lastName" required [ngClass]="{'error-input':!form.controls['lastName'].valid && form.controls['lastName'].touched}">
+        <span class="text-danger" *ngIf="!form.controls['lastName'].valid && form.controls['lastName'].touched">LastName is required</span><br>
+        <span class="text-danger" *ngIf="form.controls['lastName'].errors?.['pattern']">Please enter alphabets only.</span>
+      </div>
+      <div formArrayName="hobbies">
+        <label for="lastName">Hobbies</label>
+        <div *ngFor="let hobby of hobbies.controls; let i = index" [formGroupName]="i">
+          <input type="text" formControlName="hobby" required>
+          <button class="btnRemove" type="button" (click)="removeHobbyField(i)">Remove</button>
+        </div>
+      </div>
+      <button type="button" (click)="addHobbyField()">Add More</button>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" formControlName="email" required [ngClass]="{'error-input':!form.controls['email'].valid && form.controls['email'].touched}">
+        <span class="text-danger" *ngIf="!form.controls['email'].valid && form.controls['email'].touched">email is required</span><br>
+        <span class="text-danger" *ngIf="form.controls['email'].errors?.['email']">Please enter correct format of Email.</span> 
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" formControlName="password" required [ngClass]="{'error-input':!form.controls['password'].valid && form.controls['password'].touched}">
+        <span class="text-danger" *ngIf="!form.controls['password'].valid && form.controls['password'].touched">password is required</span><br>
+        <span class="text-danger" *ngIf="form.controls['password'].errors?.['pattern']">Password should be between 8-15 character and should have Atleast 1 Numeric value  .</span>
+      </div>
+    </div>
+    <div class="form-row">
+        <button class="btnSub" type="submit"  [disabled]="!form.valid">Submit</button>
+    </div>
+  </form>
+  
