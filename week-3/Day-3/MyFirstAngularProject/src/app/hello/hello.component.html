@@ -1,0 +1,5 @@
+<p>hello {{ name }}</p>
+<p>Color: {{ color }}</p>
+<button [style.backgroundColor]="color" (click)="changeColor()">Change Color</button>
+
+<app-nesting [name] = "childName" [parentName] = "parentName"></app-nesting>
