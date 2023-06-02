@@ -1,0 +1,6 @@
+<h2>Parent Component</h2>
+<ul>
+  <li *ngFor="let item of items; let i = index">
+    <app-child [item]="item" (remove)="removeItem(i)"></app-child>
+  </li>
+</ul>
