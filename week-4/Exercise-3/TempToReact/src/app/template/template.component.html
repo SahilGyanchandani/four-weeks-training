@@ -1,0 +1,29 @@
+<form [formGroup]="myForm" (ngSubmit)="submitForm()">
+   <h3>TemplateToReactive</h3>
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name" formControlName="name">
+      <div *ngIf="myForm.get('name').invalid && myForm.get('name').touched" class="error">
+        Name is required
+      </div>
+    </div>
+    
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" formControlName="email">
+      <div *ngIf="myForm.get('email').invalid && myForm.get('email').touched" class="error">
+        Please enter a valid email address
+      </div>
+    </div>
+    
+    <div>
+      <label for="message">Message:</label>
+      <textarea id="message" formControlName="message"></textarea>
+      <div *ngIf="myForm.get('message').invalid && myForm.get('message').touched" class="error">
+        Message is required
+      </div>
+    </div>
+    
+    <button type="submit" [disabled]="myForm.invalid">Submit</button>
+  </form>
+  
